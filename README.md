@@ -14,21 +14,21 @@ This project focuses on numerical visualization and geometric interpretation rat
 
 **Sudanese Mobius Strip**
 
-The Sudanese Mobius Strip is a minimal surface in $S^3$ orginally parameterized by Lawson.
+The Sudanese Mobius Strip is a minimal surface mobius strip in $S^3$ orginally parameterized by Lawson.  Its stereographic projection is unique in the fact that its boundary is coplanar and forms a circle.
 
 **Stereographic Projection**
 
-The Stereographic Projection is calculated as below
+The Stereographic Projection from $S^3$ to $/mathbb{R}^3$ is calculated as below
 
 $$ 
-X_s = \frac{X_1}{1 - X_4} ,
-Y_s = \frac{X_2}{1 - X_4} ,
+X_s = \frac{X_1}{1 - X_4} ,  
+Y_s = \frac{X_2}{1 - X_4} ,  
 Z_s = \frac{X_3}{1 - X_4} $$
 
 **Rotation in $S^3$**
 
 The below matrix was used to rotate the surface in $S^3$ before projection
-
+s
 $$
 \frac{1}{2}
 \begin{bmatrix}
@@ -42,7 +42,7 @@ $$
 This matrix performs a rotation in $\mathbb{R}^4$ that reorients the Sudanese Möbius strip in $S^3$. 
 It helps move the surface away from singularities (e.g., near the poles) and prepares it for stereographic projection into $\mathbb{R}^3$. The factor of $1/2$ ensures that the transformation preserves scale appropriately.
 
-**Curvature**
+**$\mathbb{R}^3$ Curvature**
 
 For both of the following calculations the coefficients are equal since they are both in $\mathbb{R}^3$
 
@@ -82,10 +82,32 @@ The surface's Gaussian curvature in $\mathbb{R}^3$ is written as $K$ and is calc
 
 $K = \frac{LN - M**2}{(EG - F^2)}$.
 
+*$S^3$ curvature*
 
+Since the strip is a minimal surface in $S^3$ it has zero mean curvature
+
+The surface's Gaussian curvature is now calculated as shown below
+
+$K = \frac{LN - M**2}{(EG - F^2)}$ + $K_0$
+
+The first and second fundamental forms are the same as described above but are calculated using the original 4D parameterization in $S^3$ provided by Lawson. $K_0$ describes the curvature inherint to the space $S^3$ and is known to be 1.0.
+
+##Project Structure
+
+**Dependencies**
+
+-Numpy
+-Matplotlib
+
+**Usage**
+
+-src/sudanese_mobius/ contains the parameterization, projection, and curvature calculation code
+-scripts/ contains the script used to plot the surface
+
+To generate the visualization run the plotting script directly after cloning.  The script imports code from src.
 
 ## Upcoming
-The next step will compute Gaussian curvature on the surface in $S^3$ using the first fundamental form of the parameterization. Comparing this to the projected surface will quantify intrinsic distortion. The readme will be updated when this is finished.
+Working on a notebooks folder with a jupyter lab simulation
 
 ## References
 
